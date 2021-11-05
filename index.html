@@ -1,0 +1,41 @@
+<head>
+
+</head>
+<body>
+<h1>Powerswap spec</h1>
+<div>
+    <p>
+        The main problem with power perpetuals remains that their funding rate depends on the cost of dynamic hedging and not the supply & demand for the exposure.
+    </p>
+    <p>
+        Powerswap <b>algorithmically guarantees</b> perfect dynamic hedging of a nonlinear position.
+    </p>
+    <p>
+        When someone sends a large buy order to a normal exchange, people hedging nonlinear positions then send orders to rebalance their positions. Their payoff replication isn’t perfect because their orders are executed after the initial large buy order.
+    </p>
+    <p>
+        With Powerswap, purchasers of nonlinear exposure automatically buy the perfect amount of hedging simultaneously with each trade on the exchange.
+    </p>
+    <p>
+        Let’s say we have a ETH/USDT Uniswap V2 style decentralized exchange. The reserves contain 25k ETH and 100 million USDT.
+    </p>
+    <p>
+        Johnny would like to speculate on ETH^2. He doesn’t understand how power perpetual funding rates work and would prefer to just pay a fixed amount for the exposure. He goes to Powerswap and purchases $10,000 of ETH^2. He thinks ETH is about to moon, so he bids $5/day for the exposure. Johnny will maintain that position until he is outbid. <i>Note: this amount could be routinely subtracted from his position or sent continuously via a Superfluid stream.</i>
+    </p>
+    <p>
+        Unlike power perpetuals, Johnny’s payoff exactly tracks the square of the price of ETH on the constant product exchange. How does this work?
+    </p>
+    <p>
+        Every time someone places a normal Uniswap buy or sell order on the exchange, the exchange simultaneously buys or sells the exact amount of coins to perfectly hedge the total amount of nonlinear exposures. The nonlinear exposure trade and the original trade <i>share the same execution price.</i>
+    </p>
+    <p>
+        For example, if Powerswap has $5 million of ETH^2 exposure and someone submits an ETH buy order for 100,000 USDT, Powerswap would simultaneously execute that order with a 2x leveraged ETH buy order for ~166,946 USDT (deterministic formula). Exchange lending pools can provide the nonlinear exposures with ETH and USDT margin because the exchange algorithm <b>guarantees zero risk of default.</b> Thus, it’s <b>crypto’s first risk-free rate of return.</b>
+    </p>
+    <p>
+        As the price of ETH increases, the notional value of the ETH^2 positions increases faster, so the exchange enforces the exposure limit by closing positions of the lowest bidders. Because Powerswap offers perfectly hedged nonlinear exposure, people pay a lot of money for it and normal traders don’t pay transaction fees (but see higher slippage). Depending how much money the nonlinear exposures pay, Powerswap <i>might even make normal trades cheaper than competitors</i> by providing Powerswap token rewards. Dynamic hedging has plagued markets since their inception and this exchange provides the first ever solution.
+    </p>
+    <p>
+        Curious? Email michael.curcio at yale dot edu, message @mcurcio on telegram or send eth to mcurcio.eth :)
+    </p>
+</div>
+</body>
